@@ -14,8 +14,8 @@ const Header = () => {
         <nav className='flex justify-between p-3'>
           <Logo />
           <DesktopNav />
-          <div className='flex gap-0 lg:gap-4'>
-            <Auth className='hidden lg:block' />
+          <div className='flex items-center gap-0 lg:gap-2'>
+            <Auth className='hidden lg:flex' />
             <ToggleTheme />
             <MobileNav />
           </div>

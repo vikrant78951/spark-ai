@@ -13,11 +13,12 @@ export default function ToggleTheme() {
       variant='ghost'
       size='icon'
       onClick={() => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))}
+      className='h-auto w-auto bg-transparent !p-0 transition-all duration-700 hover:rotate-180 hover:bg-transparent'
     >
-      {theme === 'light' ? (
-        <Sun className='h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90' />
+      {theme === 'dark' ? (
+        <Sun className='m-1' size={20} />
       ) : (
-        <Moon className='absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0' />
+        <Moon className='m-1' size={20} />
       )}
     </Button>
   );

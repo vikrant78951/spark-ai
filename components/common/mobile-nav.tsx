@@ -16,6 +16,7 @@ import { navigation } from '@/lib/data';
 import Link from 'next/link';
 
 import type { NavigationItem } from '@/lib/defination';
+import Auth from './auth';
 
 const NavItem = React.memo(({ item }: { item: NavigationItem }) => {
   return (
@@ -36,24 +37,23 @@ const MobileNav = () => {
             <Menu />
           </Button>
         </DrawerTrigger>
-        <DrawerContent>
+        <DrawerContent className='w-20'>
           <DrawerHeader className='flex flex-row items-center justify-between'>
-            <DrawerTitle>Menu</DrawerTitle>
+            <DrawerTitle className='text-lg'>Menu</DrawerTitle>
             <DrawerClose asChild>
               <Button size='lg' variant={'ghost'}>
                 <X />
               </Button>
             </DrawerClose>
           </DrawerHeader>
-          <div>
-            <nav className='p-5'>
-              <div className='flex flex-col gap-4'>
-                {navigation &&
-                  navigation.map((item) => (
-                    <NavItem key={`${item.title}`} item={item} />
-                  ))}
-              </div>
+          <div className='p-5'>
+            <nav className='flex flex-col gap-4'>
+              {navigation &&
+                navigation.map((item) => (
+                  <NavItem key={`${item.title}`} item={item} />
+                ))}
             </nav>
+            <Auth className='mt-5' />
           </div>
         </DrawerContent>
       </Drawer>
