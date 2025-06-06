@@ -5,7 +5,7 @@ import { LandPlot } from 'lucide-react';
 
 const Logo = () => {
   return (
-    <Link href='/'>
+    <Link href='/' className='flex items-center'>
       <div className='flex items-center gap-2'>
         <LandPlot />
 

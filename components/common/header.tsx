@@ -6,12 +6,14 @@ import {
   MobileNav,
   Auth,
 } from '@/components/common';
+import Wrapper from '@/components/ui/wrapper';
+import FixedHeader from '@/components/provider/scroll-header';
 
 const Header = () => {
   return (
-    <header>
-      <div className='!p-3'>
-        <nav className='flex justify-between p-3'>
+    <header className={`${true && 'fixed top-2 left-0 z-50 w-full'}`}>
+      <Wrapper className={`p-3`}>
+        <FixedHeader className={`flex justify-between rounded-full p-3`}>
           <Logo />
           <DesktopNav />
           <div className='flex items-center gap-0 lg:gap-2'>
@@ -19,8 +21,8 @@ const Header = () => {
             <ToggleTheme />
             <MobileNav />
           </div>
-        </nav>
-      </div>
+        </FixedHeader>
+      </Wrapper>
     </header>
   );
 };
